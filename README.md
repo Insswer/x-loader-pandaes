@@ -1,4 +1,4 @@
 x-loader-pandaes
 ================
 
-fix some ddr setting for pandaboardES
+fix some ddr settings for pandaboardES
