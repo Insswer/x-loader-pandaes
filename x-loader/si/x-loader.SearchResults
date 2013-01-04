@@ -1,0 +1,5 @@
+---- s_init Matches (3 in 2 files) ----
+Cpu.c (h:\x-loader\x-loader-omap4\x-loader-omap4\x-loader\cpu\omap4): * Routine: s_init
+Cpu.c (h:\x-loader\x-loader-omap4\x-loader-omap4\x-loader\cpu\omap4):void s_init(void)
+platform.S (h:\x-loader\x-loader-omap4\x-loader-omap4\x-loader\cpu\omap4):	bl      s_init          /* go setup pll,mux,memory */
+---- raise Matches (0 in 0 files) ----

@@ -1,0 +1,160 @@
+arm-none-linux-gnueabi-gcc -Wa,-gstabs -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /usr/lib/i386-linux-gnu/gcc/i686-linux-gnu/4.5.2/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -c -o cpu/omap4/start.o /media/新卷/panda/git/x-loader-omap4/x-loader/cpu/omap4/start.S
+make -C `dirname board/omap4430panda/libomap4430panda.a`
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/board/omap4430panda'
+arm-none-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu  omap4430panda.c | \
+			sed -e "s/\:/\\\:/g"|sed -e "s/\\\: /\: /g"> .depend
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/board/omap4430panda'
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/board/omap4430panda'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o omap4430panda.o omap4430panda.c
+In file included from omap4430panda.c:42:0:
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/mux.h:345:0: warning: "CONTROL_LPDDR2IO1_0" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:468:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/mux.h:346:0: warning: "CONTROL_LPDDR2IO1_1" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:469:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/mux.h:347:0: warning: "CONTROL_LPDDR2IO1_2" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:470:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/mux.h:348:0: warning: "CONTROL_LPDDR2IO1_3" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:471:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/mux.h:349:0: warning: "CONTROL_LPDDR2IO2_0" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:472:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/mux.h:350:0: warning: "CONTROL_LPDDR2IO2_1" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:473:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/mux.h:351:0: warning: "CONTROL_LPDDR2IO2_2" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:474:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/mux.h:352:0: warning: "CONTROL_LPDDR2IO2_3" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:475:0: note: this is the location of the previous definition
+arm-none-linux-gnueabi-ar crv libomap4430panda.a omap4430panda.o
+a - omap4430panda.o
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/board/omap4430panda'
+make -C `dirname cpu/omap4/libomap4.a`
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/cpu/omap4'
+arm-none-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu platform.S rom_public_dispatcher.S cpu.c mmc.c sys_info.c clock.c sdram.c syslib.c sdram_elpida.c | \
+			sed -e "s/\:/\\\:/g"|sed -e "s/\\\: /\: /g"> .depend
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/cpu/omap4'
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/cpu/omap4'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o cpu.o cpu.c
+cpu.c: In function 'cpu_init':
+cpu.c:106:5: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o mmc.o mmc.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o sys_info.o sys_info.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o clock.o clock.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o sdram.o sdram.c
+sdram.c: In function 'emif_config':
+sdram.c:116:26: warning: variable 'rev' set but not used [-Wunused-but-set-variable]
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o syslib.o syslib.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o sdram_elpida.o sdram_elpida.c
+arm-none-linux-gnueabi-gcc -Wa,-gstabs -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -c -o platform.o /media/新卷/panda/git/x-loader-omap4/x-loader/cpu/omap4/platform.S
+arm-none-linux-gnueabi-gcc -Wa,-gstabs -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -c -o rom_public_dispatcher.o /media/新卷/panda/git/x-loader-omap4/x-loader/cpu/omap4/rom_public_dispatcher.S
+arm-none-linux-gnueabi-ar crv libomap4.a cpu.o mmc.o sys_info.o clock.o sdram.o syslib.o sdram_elpida.o platform.o rom_public_dispatcher.o
+a - cpu.o
+a - mmc.o
+a - sys_info.o
+a - clock.o
+a - sdram.o
+a - syslib.o
+a - sdram_elpida.o
+a - platform.o
+a - rom_public_dispatcher.o
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/cpu/omap4'
+make -C `dirname lib/libarm.a`
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/lib'
+arm-none-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu  _udivsi3.c _umodsi3.c board.c ecc_256.c ecc_512.c printf.c div0.c | \
+			sed -e "s/\:/\\\:/g"|sed -e "s/\\\: /\: /g"> .depend
+arm-none-linux-gnueabi-gcc: error: _udivsi3.c: No such file or directory
+arm-none-linux-gnueabi-gcc: error: _umodsi3.c: No such file or directory
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/lib'
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/lib'
+arm-none-linux-gnueabi-gcc -Wa,-gstabs -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -c -o _udivsi3.o /media/新卷/panda/git/x-loader-omap4/x-loader/lib/_udivsi3.S
+arm-none-linux-gnueabi-gcc -Wa,-gstabs -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -c -o _umodsi3.o /media/新卷/panda/git/x-loader-omap4/x-loader/lib/_umodsi3.S
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o board.o board.c
+In file included from board.c:42:0:
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch-omap4/mux.h:345:0: warning: "CONTROL_LPDDR2IO1_0" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:468:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch-omap4/mux.h:346:0: warning: "CONTROL_LPDDR2IO1_1" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:469:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch-omap4/mux.h:347:0: warning: "CONTROL_LPDDR2IO1_2" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:470:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch-omap4/mux.h:348:0: warning: "CONTROL_LPDDR2IO1_3" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:471:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch-omap4/mux.h:349:0: warning: "CONTROL_LPDDR2IO2_0" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:472:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch-omap4/mux.h:350:0: warning: "CONTROL_LPDDR2IO2_1" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:473:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch-omap4/mux.h:351:0: warning: "CONTROL_LPDDR2IO2_2" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:474:0: note: this is the location of the previous definition
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch-omap4/mux.h:352:0: warning: "CONTROL_LPDDR2IO2_3" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h:475:0: note: this is the location of the previous definition
+board.c:180:0: warning: "__raw_readl" redefined [enabled by default]
+/media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/io.h:59:0: note: this is the location of the previous definition
+board.c: In function 'start_armboot':
+board.c:185:9: warning: variable 'buf' set but not used [-Wunused-but-set-variable]
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o ecc_256.o ecc_256.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o ecc_512.o ecc_512.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o printf.o printf.c
+printf.c: In function 'serial_printf':
+printf.c:290:7: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o div0.o div0.c
+arm-none-linux-gnueabi-ar crv libarm.a _udivsi3.o _umodsi3.o board.o ecc_256.o ecc_512.o printf.o div0.o
+a - _udivsi3.o
+a - _umodsi3.o
+a - board.o
+a - ecc_256.o
+a - ecc_512.o
+a - printf.o
+a - div0.o
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/lib'
+make -C `dirname fs/fat/libfat.a`
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/fs/fat'
+arm-none-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I../..//include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu  fat.c file.c | \
+			sed -e "s/\:/\\\:/g"|sed -e "s/\\\: /\: /g"> .depend
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/fs/fat'
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/fs/fat'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I../..//include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o fat.o fat.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I../..//include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o file.o file.c
+arm-none-linux-gnueabi-ar crv libfat.a  fat.o file.o
+a - fat.o
+a - file.o
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/fs/fat'
+make -C `dirname disk/libdisk.a`
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/disk'
+arm-none-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu  part.c | \
+			sed -e "s/\:/\\\:/g"|sed -e "s/\\\: /\: /g"> .depend
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/disk'
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/disk'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o part.o part.c
+arm-none-linux-gnueabi-ar crv libdisk.a part.o
+a - part.o
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/disk'
+make -C `dirname drivers/libdrivers.a`
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/drivers'
+arm-none-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu  serial.c ns16550.c onenand.c | \
+			sed -e "s/\:/\\\:/g"|sed -e "s/\\\: /\: /g"> .depend
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/drivers'
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/drivers'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o serial.o serial.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o ns16550.o ns16550.c
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o onenand.o onenand.c
+arm-none-linux-gnueabi-ar crv libdrivers.a serial.o ns16550.o onenand.o
+a - serial.o
+a - ns16550.o
+a - onenand.o
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/drivers'
+make -C `dirname common/libcommon.a`
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/common'
+arm-none-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -I..  cmd_load.c | \
+			sed -e "s/\:/\\\:/g"|sed -e "s/\\\: /\: /g"> .depend
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/common'
+make[1]: 正在进入目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/common'
+arm-none-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x40304350 -I/media/新卷/panda/git/x-loader-omap4/x-loader/include -fno-builtin -ffreestanding -nostdinc -isystem /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv7-a -mabi=apcs-gnu -Wall -Wstrict-prototypes -c -o cmd_load.o cmd_load.c
+arm-none-linux-gnueabi-ar crv libcommon.a  cmd_load.o
+a - cmd_load.o
+make[1]:正在离开目录 `/media/新卷/panda/git/x-loader-omap4/x-loader/common'
+UNDEF_SYM=`arm-none-linux-gnueabi-objdump -x board/omap4430panda/libomap4430panda.a cpu/omap4/libomap4.a lib/libarm.a fs/fat/libfat.a disk/libdisk.a drivers/libdrivers.a common/libcommon.a |sed  -n -e 's/.*\(__u_boot_cmd_.*\)/-u\1/p'|sort|uniq`;\
+ 		arm-none-linux-gnueabi-ld -Bstatic -T /media/新卷/panda/git/x-loader-omap4/x-loader/cpu/omap4/x-load.lds -Ttext 0x40304350  $UNDEF_SYM cpu/omap4/start.o \
+			--start-group board/omap4430panda/libomap4430panda.a cpu/omap4/libomap4.a lib/libarm.a fs/fat/libfat.a disk/libdisk.a drivers/libdrivers.a common/libcommon.a --end-group -L /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3 -lgcc \
+			-Map x-load.map -o x-load
+arm-none-linux-gnueabi-objcopy --gap-fill=0xff -O binary x-load x-load.bin
+gcc -O3 -o signGP  scripts/signGP.c
+TEXT_BASE=`grep -w _start System.map|cut -d ' ' -f1`
+./signGP x-load.bin 0x40304350
+cp x-load.bin.ift MLO

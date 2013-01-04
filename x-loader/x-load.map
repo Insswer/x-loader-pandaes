@@ -1,0 +1,527 @@
+Archive member included because of file (symbol)
+
+cpu/omap4/libomap4.a(platform.o)
+                              cpu/omap4/start.o (lowlevel_init)
+cpu/omap4/libomap4.a(cpu.o)   cpu/omap4/libomap4.a(platform.o) (s_init)
+cpu/omap4/libomap4.a(clock.o)
+                              cpu/omap4/libomap4.a(cpu.o) (prcm_init)
+cpu/omap4/libomap4.a(syslib.o)
+                              cpu/omap4/libomap4.a(cpu.o) (sr32)
+cpu/omap4/libomap4.a(sdram_elpida.o)
+                              cpu/omap4/libomap4.a(cpu.o) (ddr_init)
+cpu/omap4/libomap4.a(rom_public_dispatcher.o)
+                              cpu/omap4/libomap4.a(cpu.o) (omap_smc_rom)
+cpu/omap4/libomap4.a(sdram.o)
+                              cpu/omap4/libomap4.a(sdram_elpida.o) (do_ddr_init)
+lib/libarm.a(board.o)         cpu/omap4/start.o (hang)
+lib/libarm.a(printf.o)        lib/libarm.a(board.o) (serial_printf)
+lib/libarm.a(_udivsi3.o)      lib/libarm.a(printf.o) (__udivsi3)
+lib/libarm.a(_umodsi3.o)      lib/libarm.a(printf.o) (__umodsi3)
+lib/libarm.a(div0.o)          lib/libarm.a(_udivsi3.o) (__div0)
+fs/fat/libfat.a(fat.o)        lib/libarm.a(board.o) (strcpy)
+disk/libdisk.a(part.o)        fs/fat/libfat.a(fat.o) (dev_print)
+drivers/libdrivers.a(serial.o)
+                              lib/libarm.a(board.o) (serial_init)
+drivers/libdrivers.a(ns16550.o)
+                              drivers/libdrivers.a(serial.o) (NS16550_init)
+board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+                              lib/libarm.a(board.o) (board_init)
+cpu/omap4/libomap4.a(mmc.o)   lib/libarm.a(board.o) (mmc_get_dev)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00000000                . = 0x0
+                0x00000000                . = ALIGN (0x4)
+
+.text           0x40300000     0x4bd4
+ cpu/omap4/start.o(.text)
+ .text          0x40300000      0x160 cpu/omap4/start.o
+                0x40300000                _start
+                0x40300040                _end_vect
+                0x40300044                _armboot_start
+                0x40300048                _bss_start
+                0x4030004c                _bss_end
+ *(.text)
+ .text          0x40300160       0x24 cpu/omap4/libomap4.a(platform.o)
+                0x40300164                lowlevel_init
+ .text          0x40300184      0x47c cpu/omap4/libomap4.a(cpu.o)
+                0x403001f8                cortex_a9_rev
+                0x40300200                omap_revision
+                0x403002f0                omap4_silicon_type
+                0x40300304                get_device_type
+                0x40300318                cpu_init
+                0x40300424                get_boot_mode
+                0x40300438                get_boot_device
+                0x4030044c                raw_boot
+                0x40300464                fat_boot
+                0x4030047c                s_init
+                0x403005e8                wait_for_command_complete
+                0x403005f8                nand_init
+ .text          0x40300600     0x1650 cpu/omap4/libomap4.a(clock.o)
+                0x40300600                configure_core_dpll_no_lock
+                0x403007fc                lock_core_dpll
+                0x40300838                lock_core_dpll_shadow
+                0x40300924                prcm_init
+ .text          0x40301c50       0x60 cpu/omap4/libomap4.a(syslib.o)
+                0x40301c50                sdelay
+                0x40301c5c                sr32
+                0x40301c7c                wait_on_value
+ .text          0x40301cb0      0x110 cpu/omap4/libomap4.a(sdram_elpida.o)
+                0x40301cb0                ddr_init
+                0x40301cb0                __ddr_init
+ .text          0x40301dc0       0x20 cpu/omap4/libomap4.a(rom_public_dispatcher.o)
+                0x40301dc0                omap_smc_rom
+ .text          0x40301de0      0x2e4 cpu/omap4/libomap4.a(sdram.o)
+                0x40301f40                reset_phy
+                0x40301f50                do_ddr_init
+ .text          0x403020c4      0x39c lib/libarm.a(board.o)
+                0x403020c4                print_info
+                0x403020dc                mmc_read_bootloader
+                0x40302160                omap_temp_sensor_check
+                0x4030231c                hang
+                0x40302334                start_armboot
+ .text          0x40302460      0x698 lib/libarm.a(printf.o)
+                0x403026f4                strnlen
+                0x4030271c                serial_printf
+ .text          0x40302af8       0x98 lib/libarm.a(_udivsi3.o)
+                0x40302af8                __udivsi3
+ .text          0x40302b90       0xb4 lib/libarm.a(_umodsi3.o)
+                0x40302b90                __umodsi3
+ .text          0x40302c44        0x4 lib/libarm.a(div0.o)
+                0x40302c44                __div0
+ .text          0x40302c48      0xc48 fs/fat/libfat.a(fat.o)
+                0x40302cd8                strncmp
+                0x40302d1c                strcpy
+                0x40302d34                strcmp
+                0x40302d5c                memcpy
+                0x40302d7c                disk_read
+                0x403030bc                fat_register_device
+                0x40303198                do_fat_read
+                0x40303734                file_fat_detectfs
+                0x40303878                file_fat_ls
+                0x40303888                file_fat_read
+ .text          0x40303890      0x174 disk/libdisk.a(part.o)
+                0x40303890                dev_print
+ .text          0x40303a04       0xb4 drivers/libdrivers.a(serial.o)
+                0x40303a0c                serial_init
+                0x40303a2c                serial_putc
+                0x40303a5c                serial_puts
+                0x40303a7c                serial_getc
+                0x40303a90                serial_tstc
+                0x40303a9c                serial_setbrg
+ .text          0x40303ab8       0xa4 drivers/libdrivers.a(ns16550.o)
+                0x40303ab8                NS16550_init
+                0x40303af4                NS16550_reinit
+                0x40303b28                NS16550_putc
+                0x40303b3c                NS16550_getc
+                0x40303b50                NS16550_tstc
+ .text          0x40303b5c      0x684 board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+                0x40303b5c                board_init
+                0x40303c40                set_muxconf_regs
+                0x403041dc                board_hang
+ .text          0x403041e0      0x9f4 cpu/omap4/libomap4.a(mmc.o)
+                0x403041e0                mmc_get_dev
+                0x403041ec                mmc_board_init
+                0x40304220                mmc_init_stream
+                0x40304294                mmc_clock_config
+                0x40304320                mmc_init_setup
+                0x403043d4                mmc_send_cmd
+                0x40304460                mmc_read_data
+                0x403044dc                mmc_detect_card
+                0x40304764                configure_controller
+                0x403047bc                mmc_read_cardsize
+                0x403048b0                omap_mmc_read_sect
+                0x40304940                mmc_bread
+                0x40304968                configure_mmc
+                0x40304b04                mmc_init
+                0x40304b88                mmc_read
+
+.glue_7         0x40304bd4        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x40304bd4        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x40304bd4        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x40304bd4        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x40304bd4        0x0
+ .iplt          0x00000000        0x0 cpu/omap4/start.o
+                0x40304bd4                . = ALIGN (0x4)
+
+.rodata         0x40304bd4      0x22c
+ *(.rodata)
+ .rodata        0x40304bd4        0x3 cpu/omap4/libomap4.a(cpu.o)
+ *fill*         0x40304bd7        0x1 00
+ .rodata        0x40304bd8       0xfc cpu/omap4/libomap4.a(clock.o)
+                0x40304bd8                per_dpll_param
+ .rodata        0x40304cd4       0xfc cpu/omap4/libomap4.a(sdram_elpida.o)
+                0x40304cd4                ddr_regs_elpida2G_380_mhz
+                0x40304cf8                ddr_regs_elpida2G_200_mhz_2cs
+                0x40304d1c                ddr_regs_elpida2G_400_mhz_2cs
+                0x40304d40                ddr_regs_elpida4G_400_mhz_1cs
+                0x40304d64                ddr_regs_elpida2G_200_mhz
+                0x40304d88                ddr_regs_elpida4G_466_mhz_1cs
+                0x40304dac                ddr_regs_elpida2G_400_mhz
+ .rodata        0x40304dd0       0x30 cpu/omap4/libomap4.a(mmc.o)
+
+.rodata.str1.1  0x40304e00      0x484
+ .rodata.str1.1
+                0x40304e00      0x16b lib/libarm.a(board.o)
+                                0x170 (size before relaxing)
+ .rodata.str1.1
+                0x40304f6b       0x51 lib/libarm.a(printf.o)
+ .rodata.str1.1
+                0x40304fbc      0x173 fs/fat/libfat.a(fat.o)
+                                0x178 (size before relaxing)
+ .rodata.str1.1
+                0x4030512f       0xe5 disk/libdisk.a(part.o)
+ .rodata.str1.1
+                0x40305214       0x70 cpu/omap4/libomap4.a(mmc.o)
+
+.rel.dyn        0x40305284        0x0
+ .rel.iplt      0x00000000        0x0 cpu/omap4/start.o
+                0x40305284                . = ALIGN (0x4)
+
+.data           0x40305284      0xcf4
+ *(.data)
+ .data          0x40305284        0x0 cpu/omap4/start.o
+ .data          0x40305284        0x0 cpu/omap4/libomap4.a(platform.o)
+ .data          0x40305284        0x0 cpu/omap4/libomap4.a(cpu.o)
+ .data          0x40305284      0xccc cpu/omap4/libomap4.a(clock.o)
+                0x40305284                core_dpll_param_l3_190
+                0x40305380                core_dpll_param
+                0x4030547c                core_dpll_param_ddr400
+                0x40305578                mpu_dpll_param_800mhz
+                0x40305674                mpu_dpll_param_700mhz
+                0x40305770                mpu_dpll_param_600mhz
+                0x4030586c                iva_dpll_param
+                0x40305968                abe_dpll_param
+                0x40305a64                usb_dpll_param
+                0x40305b60                core_dpll_param_ddr466
+                0x40305c5c                mpu_dpll_param_1_5ghz
+                0x40305d58                mpu_dpll_param_920mhz
+                0x40305e54                mpu_dpll_param_1008mhz
+ .data          0x40305f50        0x0 cpu/omap4/libomap4.a(syslib.o)
+ .data          0x40305f50        0x0 cpu/omap4/libomap4.a(sdram_elpida.o)
+ .data          0x40305f50        0x0 cpu/omap4/libomap4.a(rom_public_dispatcher.o)
+ .data          0x40305f50        0x0 cpu/omap4/libomap4.a(sdram.o)
+ .data          0x40305f50       0x14 lib/libarm.a(board.o)
+                0x40305f50                init_sequence
+ .data          0x40305f64        0x0 lib/libarm.a(printf.o)
+ .data          0x40305f64        0x0 lib/libarm.a(_udivsi3.o)
+ .data          0x40305f64        0x0 lib/libarm.a(_umodsi3.o)
+ .data          0x40305f64        0x0 lib/libarm.a(div0.o)
+ .data          0x40305f64        0xc fs/fat/libfat.a(fat.o)
+                0x40305f68                fnamecopy
+                0x40305f6c                do_fat_read_block
+ .data          0x40305f70        0x0 disk/libdisk.a(part.o)
+ .data          0x40305f70        0x0 drivers/libdrivers.a(serial.o)
+ .data          0x40305f70        0x0 drivers/libdrivers.a(ns16550.o)
+ .data          0x40305f70        0x0 board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .data          0x40305f70        0x8 cpu/omap4/libomap4.a(mmc.o)
+                0x40305f70                cur_controller_data
+
+.igot.plt       0x40305f78        0x0
+ .igot.plt      0x00000000        0x0 cpu/omap4/start.o
+                0x40305f78                . = ALIGN (0x4)
+
+.got
+ *(.got)
+                0x40305f78                . = ALIGN (0x4)
+                0x40305f78                __bss_start = .
+
+.bss            0x40305f78     0x30f0
+ *(.bss)
+ .bss           0x40305f78        0x0 cpu/omap4/start.o
+ .bss           0x40305f78        0x0 cpu/omap4/libomap4.a(platform.o)
+ .bss           0x40305f78        0x0 cpu/omap4/libomap4.a(cpu.o)
+ .bss           0x40305f78        0x0 cpu/omap4/libomap4.a(clock.o)
+ .bss           0x40305f78        0x0 cpu/omap4/libomap4.a(syslib.o)
+ .bss           0x40305f78        0x0 cpu/omap4/libomap4.a(sdram_elpida.o)
+ .bss           0x40305f78        0x0 cpu/omap4/libomap4.a(rom_public_dispatcher.o)
+ .bss           0x40305f78        0x0 cpu/omap4/libomap4.a(sdram.o)
+ .bss           0x40305f78        0x0 lib/libarm.a(board.o)
+ .bss           0x40305f78        0x0 lib/libarm.a(printf.o)
+ .bss           0x40305f78        0x0 lib/libarm.a(_udivsi3.o)
+ .bss           0x40305f78        0x0 lib/libarm.a(_umodsi3.o)
+ .bss           0x40305f78        0x0 lib/libarm.a(div0.o)
+ .bss           0x40305f78     0x3078 fs/fat/libfat.a(fat.o)
+                0x40305f80                datablock
+                0x40308f94                bs
+                0x40308fd4                volinfo
+ .bss           0x40308ff0        0x0 disk/libdisk.a(part.o)
+ .bss           0x40308ff0        0x0 drivers/libdrivers.a(serial.o)
+ .bss           0x40308ff0        0x0 drivers/libdrivers.a(ns16550.o)
+ .bss           0x40308ff0        0x0 board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .bss           0x40308ff0       0x78 cpu/omap4/libomap4.a(mmc.o)
+                0x40309054                cur_card_data
+                0x40309068                _end = .
+Address of section .text set to 0x40300000
+LOAD cpu/omap4/start.o
+START GROUP
+LOAD board/omap4430panda/libomap4430panda.a
+LOAD cpu/omap4/libomap4.a
+LOAD lib/libarm.a
+LOAD fs/fat/libfat.a
+LOAD disk/libdisk.a
+LOAD drivers/libdrivers.a
+LOAD common/libcommon.a
+END GROUP
+LOAD /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/libgcc.a
+OUTPUT(x-load elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x10
+ .ARM.attributes
+                0x00000000       0x10 cpu/omap4/start.o
+ .ARM.attributes
+                0x00000010       0x10 cpu/omap4/libomap4.a(platform.o)
+ .ARM.attributes
+                0x00000020       0x10 cpu/omap4/libomap4.a(cpu.o)
+ .ARM.attributes
+                0x00000030       0x10 cpu/omap4/libomap4.a(clock.o)
+ .ARM.attributes
+                0x00000040       0x10 cpu/omap4/libomap4.a(syslib.o)
+ .ARM.attributes
+                0x00000050       0x10 cpu/omap4/libomap4.a(sdram_elpida.o)
+ .ARM.attributes
+                0x00000060       0x10 cpu/omap4/libomap4.a(rom_public_dispatcher.o)
+ .ARM.attributes
+                0x00000070       0x10 cpu/omap4/libomap4.a(sdram.o)
+ .ARM.attributes
+                0x00000080       0x10 lib/libarm.a(board.o)
+ .ARM.attributes
+                0x00000090       0x10 lib/libarm.a(printf.o)
+ .ARM.attributes
+                0x000000a0       0x10 lib/libarm.a(_udivsi3.o)
+ .ARM.attributes
+                0x000000b0       0x10 lib/libarm.a(_umodsi3.o)
+ .ARM.attributes
+                0x000000c0       0x10 lib/libarm.a(div0.o)
+ .ARM.attributes
+                0x000000d0       0x10 fs/fat/libfat.a(fat.o)
+ .ARM.attributes
+                0x000000e0       0x10 disk/libdisk.a(part.o)
+ .ARM.attributes
+                0x000000f0       0x10 drivers/libdrivers.a(serial.o)
+ .ARM.attributes
+                0x00000100       0x10 drivers/libdrivers.a(ns16550.o)
+ .ARM.attributes
+                0x00000110       0x10 board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .ARM.attributes
+                0x00000120       0x10 cpu/omap4/libomap4.a(mmc.o)
+
+.comment        0x00000000       0x30
+ .comment       0x00000000       0x30 cpu/omap4/libomap4.a(cpu.o)
+                                 0x31 (size before relaxing)
+ .comment       0x00000000       0x31 cpu/omap4/libomap4.a(clock.o)
+ .comment       0x00000000       0x31 cpu/omap4/libomap4.a(syslib.o)
+ .comment       0x00000000       0x31 cpu/omap4/libomap4.a(sdram_elpida.o)
+ .comment       0x00000000       0x31 cpu/omap4/libomap4.a(sdram.o)
+ .comment       0x00000000       0x31 lib/libarm.a(board.o)
+ .comment       0x00000000       0x31 lib/libarm.a(printf.o)
+ .comment       0x00000000       0x31 lib/libarm.a(div0.o)
+ .comment       0x00000000       0x31 fs/fat/libfat.a(fat.o)
+ .comment       0x00000000       0x31 disk/libdisk.a(part.o)
+ .comment       0x00000000       0x31 drivers/libdrivers.a(serial.o)
+ .comment       0x00000000       0x31 drivers/libdrivers.a(ns16550.o)
+ .comment       0x00000000       0x31 board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .comment       0x00000000       0x31 cpu/omap4/libomap4.a(mmc.o)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 cpu/omap4/libomap4.a(cpu.o)
+ .note.GNU-stack
+                0x00000000        0x0 cpu/omap4/libomap4.a(clock.o)
+ .note.GNU-stack
+                0x00000000        0x0 cpu/omap4/libomap4.a(syslib.o)
+ .note.GNU-stack
+                0x00000000        0x0 cpu/omap4/libomap4.a(sdram_elpida.o)
+ .note.GNU-stack
+                0x00000000        0x0 cpu/omap4/libomap4.a(sdram.o)
+ .note.GNU-stack
+                0x00000000        0x0 lib/libarm.a(board.o)
+ .note.GNU-stack
+                0x00000000        0x0 lib/libarm.a(printf.o)
+ .note.GNU-stack
+                0x00000000        0x0 lib/libarm.a(div0.o)
+ .note.GNU-stack
+                0x00000000        0x0 fs/fat/libfat.a(fat.o)
+ .note.GNU-stack
+                0x00000000        0x0 disk/libdisk.a(part.o)
+ .note.GNU-stack
+                0x00000000        0x0 drivers/libdrivers.a(serial.o)
+ .note.GNU-stack
+                0x00000000        0x0 drivers/libdrivers.a(ns16550.o)
+ .note.GNU-stack
+                0x00000000        0x0 board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .note.GNU-stack
+                0x00000000        0x0 cpu/omap4/libomap4.a(mmc.o)
+
+.stab           0x00000000      0x870
+ .stab          0x00000000      0x318 cpu/omap4/start.o
+ .stab          0x00000318       0x6c cpu/omap4/libomap4.a(platform.o)
+                                 0x78 (size before relaxing)
+ .stab          0x00000384       0x78 cpu/omap4/libomap4.a(rom_public_dispatcher.o)
+                                 0x84 (size before relaxing)
+ .stab          0x000003fc      0x210 lib/libarm.a(_udivsi3.o)
+                                0x21c (size before relaxing)
+ .stab          0x0000060c      0x264 lib/libarm.a(_umodsi3.o)
+                                0x270 (size before relaxing)
+
+.stabstr        0x00000000      0x169
+ .stabstr       0x00000000      0x169 cpu/omap4/start.o
+
+.debug_info     0x00000000     0x418f
+ .debug_info    0x00000000      0x538 cpu/omap4/libomap4.a(cpu.o)
+ .debug_info    0x00000538      0x542 cpu/omap4/libomap4.a(clock.o)
+ .debug_info    0x00000a7a      0x180 cpu/omap4/libomap4.a(syslib.o)
+ .debug_info    0x00000bfa      0x1ed cpu/omap4/libomap4.a(sdram_elpida.o)
+ .debug_info    0x00000de7      0x21a cpu/omap4/libomap4.a(sdram.o)
+ .debug_info    0x00001001      0x393 lib/libarm.a(board.o)
+ .debug_info    0x00001394      0x3ff lib/libarm.a(printf.o)
+ .debug_info    0x00001793       0x45 lib/libarm.a(div0.o)
+ .debug_info    0x000017d8     0x1073 fs/fat/libfat.a(fat.o)
+ .debug_info    0x0000284b      0x25d disk/libdisk.a(part.o)
+ .debug_info    0x00002aa8      0x2a7 drivers/libdrivers.a(serial.o)
+ .debug_info    0x00002d4f      0x28b drivers/libdrivers.a(ns16550.o)
+ .debug_info    0x00002fda       0xcb board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .debug_info    0x000030a5     0x10ea cpu/omap4/libomap4.a(mmc.o)
+
+.debug_abbrev   0x00000000     0x13e0
+ .debug_abbrev  0x00000000      0x2a1 cpu/omap4/libomap4.a(cpu.o)
+ .debug_abbrev  0x000002a1      0x1a3 cpu/omap4/libomap4.a(clock.o)
+ .debug_abbrev  0x00000444       0xa9 cpu/omap4/libomap4.a(syslib.o)
+ .debug_abbrev  0x000004ed       0xba cpu/omap4/libomap4.a(sdram_elpida.o)
+ .debug_abbrev  0x000005a7      0x122 cpu/omap4/libomap4.a(sdram.o)
+ .debug_abbrev  0x000006c9      0x1ab lib/libarm.a(board.o)
+ .debug_abbrev  0x00000874      0x1d1 lib/libarm.a(printf.o)
+ .debug_abbrev  0x00000a45       0x3a lib/libarm.a(div0.o)
+ .debug_abbrev  0x00000a7f      0x382 fs/fat/libfat.a(fat.o)
+ .debug_abbrev  0x00000e01       0xeb disk/libdisk.a(part.o)
+ .debug_abbrev  0x00000eec      0x130 drivers/libdrivers.a(serial.o)
+ .debug_abbrev  0x0000101c       0xfd drivers/libdrivers.a(ns16550.o)
+ .debug_abbrev  0x00001119       0x7c board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .debug_abbrev  0x00001195      0x24b cpu/omap4/libomap4.a(mmc.o)
+
+.debug_loc      0x00000000     0x2d4b
+ .debug_loc     0x00000000      0x3bf cpu/omap4/libomap4.a(cpu.o)
+ .debug_loc     0x000003bf      0x242 cpu/omap4/libomap4.a(clock.o)
+ .debug_loc     0x00000601      0x117 cpu/omap4/libomap4.a(syslib.o)
+ .debug_loc     0x00000718       0x5d cpu/omap4/libomap4.a(sdram_elpida.o)
+ .debug_loc     0x00000775       0xfc cpu/omap4/libomap4.a(sdram.o)
+ .debug_loc     0x00000871      0x1ab lib/libarm.a(board.o)
+ .debug_loc     0x00000a1c      0x683 lib/libarm.a(printf.o)
+ .debug_loc     0x0000109f      0xe80 fs/fat/libfat.a(fat.o)
+ .debug_loc     0x00001f1f      0x124 disk/libdisk.a(part.o)
+ .debug_loc     0x00002043      0x10d drivers/libdrivers.a(serial.o)
+ .debug_loc     0x00002150       0x4c drivers/libdrivers.a(ns16550.o)
+ .debug_loc     0x0000219c       0x5e board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .debug_loc     0x000021fa      0xb51 cpu/omap4/libomap4.a(mmc.o)
+
+.debug_aranges  0x00000000      0x1c0
+ .debug_aranges
+                0x00000000       0x20 cpu/omap4/libomap4.a(cpu.o)
+ .debug_aranges
+                0x00000020       0x20 cpu/omap4/libomap4.a(clock.o)
+ .debug_aranges
+                0x00000040       0x20 cpu/omap4/libomap4.a(syslib.o)
+ .debug_aranges
+                0x00000060       0x20 cpu/omap4/libomap4.a(sdram_elpida.o)
+ .debug_aranges
+                0x00000080       0x20 cpu/omap4/libomap4.a(sdram.o)
+ .debug_aranges
+                0x000000a0       0x20 lib/libarm.a(board.o)
+ .debug_aranges
+                0x000000c0       0x20 lib/libarm.a(printf.o)
+ .debug_aranges
+                0x000000e0       0x20 lib/libarm.a(div0.o)
+ .debug_aranges
+                0x00000100       0x20 fs/fat/libfat.a(fat.o)
+ .debug_aranges
+                0x00000120       0x20 disk/libdisk.a(part.o)
+ .debug_aranges
+                0x00000140       0x20 drivers/libdrivers.a(serial.o)
+ .debug_aranges
+                0x00000160       0x20 drivers/libdrivers.a(ns16550.o)
+ .debug_aranges
+                0x00000180       0x20 board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .debug_aranges
+                0x000001a0       0x20 cpu/omap4/libomap4.a(mmc.o)
+
+.debug_ranges   0x00000000      0x258
+ .debug_ranges  0x00000000       0x70 cpu/omap4/libomap4.a(cpu.o)
+ .debug_ranges  0x00000070      0x188 cpu/omap4/libomap4.a(clock.o)
+ .debug_ranges  0x000001f8       0x60 fs/fat/libfat.a(fat.o)
+
+.debug_line     0x00000000     0x1507
+ .debug_line    0x00000000      0x1f6 cpu/omap4/libomap4.a(cpu.o)
+ .debug_line    0x000001f6      0x285 cpu/omap4/libomap4.a(clock.o)
+ .debug_line    0x0000047b       0x93 cpu/omap4/libomap4.a(syslib.o)
+ .debug_line    0x0000050e      0x106 cpu/omap4/libomap4.a(sdram_elpida.o)
+ .debug_line    0x00000614      0x184 cpu/omap4/libomap4.a(sdram.o)
+ .debug_line    0x00000798      0x1db lib/libarm.a(board.o)
+ .debug_line    0x00000973      0x24b lib/libarm.a(printf.o)
+ .debug_line    0x00000bbe       0x38 lib/libarm.a(div0.o)
+ .debug_line    0x00000bf6      0x392 fs/fat/libfat.a(fat.o)
+ .debug_line    0x00000f88       0xf3 disk/libdisk.a(part.o)
+ .debug_line    0x0000107b       0xa1 drivers/libdrivers.a(serial.o)
+ .debug_line    0x0000111c       0xae drivers/libdrivers.a(ns16550.o)
+ .debug_line    0x000011ca       0x5a board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .debug_line    0x00001224      0x2e3 cpu/omap4/libomap4.a(mmc.o)
+
+.debug_str      0x00000000     0x162b
+ .debug_str     0x00000000      0x27b cpu/omap4/libomap4.a(cpu.o)
+                                0x2be (size before relaxing)
+ .debug_str     0x0000027b      0x23d cpu/omap4/libomap4.a(clock.o)
+                                0x317 (size before relaxing)
+ .debug_str     0x000004b8       0x60 cpu/omap4/libomap4.a(syslib.o)
+                                0x140 (size before relaxing)
+ .debug_str     0x00000518      0x126 cpu/omap4/libomap4.a(sdram_elpida.o)
+                                0x1fe (size before relaxing)
+ .debug_str     0x0000063e       0x52 cpu/omap4/libomap4.a(sdram.o)
+                                0x186 (size before relaxing)
+ .debug_str     0x00000690      0x132 lib/libarm.a(board.o)
+                                0x217 (size before relaxing)
+ .debug_str     0x000007c2       0xb3 lib/libarm.a(printf.o)
+                                0x1ac (size before relaxing)
+ .debug_str     0x00000875        0xe lib/libarm.a(div0.o)
+                                 0x53 (size before relaxing)
+ .debug_str     0x00000883      0x481 fs/fat/libfat.a(fat.o)
+                                0x610 (size before relaxing)
+ .debug_str     0x00000d04       0x6b disk/libdisk.a(part.o)
+                                0x189 (size before relaxing)
+ .debug_str     0x00000d6f       0xed drivers/libdrivers.a(serial.o)
+                                0x182 (size before relaxing)
+ .debug_str     0x00000e5c       0x63 drivers/libdrivers.a(ns16550.o)
+                                0x16f (size before relaxing)
+ .debug_str     0x00000ebf       0x70 board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+                                0x110 (size before relaxing)
+ .debug_str     0x00000f2f      0x6fc cpu/omap4/libomap4.a(mmc.o)
+                                0x88f (size before relaxing)
+
+.debug_frame    0x00000000      0x874
+ .debug_frame   0x00000000      0x124 cpu/omap4/libomap4.a(cpu.o)
+ .debug_frame   0x00000124       0x78 cpu/omap4/libomap4.a(clock.o)
+ .debug_frame   0x0000019c       0x50 cpu/omap4/libomap4.a(syslib.o)
+ .debug_frame   0x000001ec       0x28 cpu/omap4/libomap4.a(sdram_elpida.o)
+ .debug_frame   0x00000214       0x70 cpu/omap4/libomap4.a(sdram.o)
+ .debug_frame   0x00000284       0x90 lib/libarm.a(board.o)
+ .debug_frame   0x00000314       0x88 lib/libarm.a(printf.o)
+ .debug_frame   0x0000039c       0x20 lib/libarm.a(div0.o)
+ .debug_frame   0x000003bc      0x18c fs/fat/libfat.a(fat.o)
+ .debug_frame   0x00000548       0x38 disk/libdisk.a(part.o)
+ .debug_frame   0x00000580       0xa8 drivers/libdrivers.a(serial.o)
+ .debug_frame   0x00000628       0x60 drivers/libdrivers.a(ns16550.o)
+ .debug_frame   0x00000688       0x5c board/omap4430panda/libomap4430panda.a(omap4430panda.o)
+ .debug_frame   0x000006e4      0x190 cpu/omap4/libomap4.a(mmc.o)

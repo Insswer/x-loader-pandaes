@@ -1,0 +1,19 @@
+part.o: part.c \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/common.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/config.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/configs/omap4430panda.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/cpu.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/omap4430.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/arch/sizes.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/linux/types.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/linux/config.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/linux/posix_types.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/linux/stddef.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/posix_types.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/types.h \
+ /home/insswer/gccpanda/arm-2012.03/bin/../lib/gcc/arm-none-linux-gnueabi/4.6.3/include/stdarg.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/setup.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/asm/x-load-arm.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/command.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/ide.h \
+ /media/新卷/panda/git/x-loader-omap4/x-loader/include/part.h
